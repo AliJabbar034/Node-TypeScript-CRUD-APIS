@@ -8,7 +8,6 @@ export const create = async (
   userName: string
 ): Promise<IUser | null> => {
   const isUserExist = await findOneByEmail(email);
-  console.log("isRunning", isUserExist);
 
   if (isUserExist) {
     throw new AppError(
@@ -33,15 +32,11 @@ export const create = async (
 };
 
 export const update = (): string => {
-  return "upda";
+  return "updating";
 };
 
 const findOneByEmail = async (email: string): Promise<IUser | null> => {
-  console.log("eaa", email);
-
   const user = await User.findOne({ email });
-
-  console.log("ffffffffffffffff", user);
 
   return user;
 };
