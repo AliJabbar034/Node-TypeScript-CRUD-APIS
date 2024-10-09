@@ -1,10 +1,12 @@
 import mongoose, { Document, Schema } from "mongoose";
 import { z } from "zod";
+import jwt from "jsonwebtoken";
 
 export interface IUser extends Document {
   userName: string;
   email: string;
   password: string;
+  generateToken: () => string;
 }
 
 export const UserZodSchema = z.object({
@@ -17,6 +19,13 @@ export const UserZodSchema = z.object({
   password: z
     .string()
     .min(6, { message: "length of name should be 6 or greater than 6" }),
+});
+
+export const loginUserDto = z.object({
+  email: z.string().email("Provide email"),
+  password: z
+    .string()
+    .min(6, { message: "Password should be equal or greater then 6" }),
 });
 
 const UserSchema: Schema = new Schema({
@@ -37,6 +46,13 @@ const UserSchema: Schema = new Schema({
     select: false,
   },
 });
+
+UserSchema.methods.generateToken = function (): string {
+  const token = jwt.sign({ _id: this._id }, process.env.JWT_SECRET_KEY || "t", {
+    expiresIn: "3600s",
+  });
+  return token;
+};
 
 const User = mongoose.model<IUser>("User", UserSchema);
 

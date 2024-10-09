@@ -6,6 +6,7 @@ import log from "./logger/Logger";
 import mongoConnection from "./config/db";
 import errorHandler from "./middleware/errorHandler.middleware";
 import userRouter from "./routes/user.router";
+import { Authentication } from "./middleware/Authentication";
 
 dotenv.config();
 
