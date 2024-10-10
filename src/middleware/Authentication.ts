@@ -31,8 +31,6 @@ export const Authentication = asyncHandler(
     }
     req.user = user;
 
-    console.log(req?.user);
-
     next();
   }
 );
