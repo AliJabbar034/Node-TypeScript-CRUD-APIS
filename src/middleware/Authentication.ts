@@ -5,8 +5,13 @@ import { StatusCodes } from "http-status-codes";
 import AppError from "../utills/AppError";
 import jwt, { JwtPayload } from "jsonwebtoken";
 import { findoneById } from "../services/user.service";
+
+interface Req extends Request {
+  user?: IUser;
+}
+
 export const Authentication = asyncHandler(
-  async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  async (req: Req, res: Response, next: NextFunction): Promise<void> => {
     const token = req.headers.authorization?.split(" ")[1];
 
     if (!token) {
@@ -29,6 +34,8 @@ export const Authentication = asyncHandler(
     if (!user) {
       throw new AppError("Unauthorized access", StatusCodes.UNAUTHORIZED);
     }
+
+    req.user = user;
 
     next();
   }

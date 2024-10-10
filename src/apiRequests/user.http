@@ -8,7 +8,7 @@ GET  http://localhost:4000/api/users/
 # GET A USER BY ID
 GET http://localhost:4000/api/users/670655629b1999576ad025ca
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzA3Njg1ZmNiYjRjZDFkOTExNDdmMmEiLCJpYXQiOjE3Mjg1Mzg3MzUsImV4cCI6MTcyODU0MjMzNX0.O1BTZ2yOR8AMjTmGAKMzDl6dA54oQKGCwjfHOG7MBrA
+Authorization: Bearer token
 
 
 
