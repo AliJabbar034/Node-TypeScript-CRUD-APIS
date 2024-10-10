@@ -29,8 +29,9 @@ export const Authentication = asyncHandler(
     if (!user) {
       throw new AppError("Unauthorized access", StatusCodes.UNAUTHORIZED);
     }
+    req.user = user;
 
-    console.log(req);
+    console.log(req?.user);
 
     next();
   }

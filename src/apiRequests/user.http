@@ -8,7 +8,7 @@ GET  http://localhost:4000/api/users/
 # GET A USER BY ID
 GET http://localhost:4000/api/users/670655629b1999576ad025ca
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzA2NTU2MjliMTk5OTU3NmFkMDI1Y2EiLCJpYXQiOjE3Mjg0Nzc5OTAsImV4cCI6MTcyODQ4MTU5MH0.HzgoRuKHV643VO8Oh28HS4K9rxwDwsCfCi0OlRmu2vk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzA3Njg1ZmNiYjRjZDFkOTExNDdmMmEiLCJpYXQiOjE3Mjg1Mzg3MzUsImV4cCI6MTcyODU0MjMzNX0.O1BTZ2yOR8AMjTmGAKMzDl6dA54oQKGCwjfHOG7MBrA
 
 
 
@@ -18,7 +18,7 @@ Content-Type:application/json
 
 {
     "userName":"ali",
-    "email":"al888it@gmail.com",
+    "email":"al88it@gmail.com",
     "password":"password6789"
 }
 
@@ -28,7 +28,7 @@ Content-Type:application/json
 
 {
   
-    "email":"al888i@gmail.com",
+   "email":"al88it@gmail.com",
     "password":"password6789"
 }
 
